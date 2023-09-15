@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+
+    <!-- Lista de tareas -->
+    <ul>
+        {% for task in tasks %}
+            <li>{{ add_Tareas.title }} {% if task.done %}(Completada){% endif %}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Formulario para agregar una nueva tarea -->
+    <h2>Agregar Nueva Tarea</h2>
+    <form action="/add_Tareas" method="POST">
+        <label for="title">Título de la Tarea:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="description">Descripción:</label>
+        <input type="text" id="description" name="description">
+        <br>
+        <input type="submit" value="Agregar Tarea">
+    </form>
+</body>
+</html>
